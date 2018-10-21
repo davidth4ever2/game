@@ -1,0 +1,94 @@
+<html>
+ <head>
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+
+
+<body id="document">
+
+<span></span>
+
+</body>
+<script>
+
+   var v_count = 0;
+
+   /* for( var i =0; i <= 9;i++) {
+    var node = document.createElement("div");
+    var textnode = document.createTextNode(i);
+    node.appendChild(textnode);
+    document.getElementsByTagName("body")[0].appendChild(node);
+    }*/
+
+    'use strict'
+	document.addEventListener('keydown',(event) =>
+    	{
+	    const keyName           = event.key;
+        const keyCode           = event.code;
+        var last_break_id       = 0;
+        var last_character_id   = 0;
+
+            var this_document = document.getElementById('document');
+	
+	    if(keyName === "Backspace"){
+                
+		    var spans             = document.getElementsByTagName("SPAN");
+            var last_character_id = spans[spans.length-1].id;
+
+            if (document.getElementsByTagName("BR") > 0) {
+                var breaks = document.getElementsByTagName("BR");
+                var last_break_id  = breaks[breaks.length-1].id;
+            }
+
+ 		
+		/*console.log(last_character_id);*/
+		/*document.getElementById(last_character_id).remove();*/
+
+        if(last_character_id> last_break_id &&  document.getElementById(last_break_id)) {
+
+            document.getElementById(last_break_id).remove();
+
+
+         }        
+         else {
+
+
+            document.getElementById(last_character_id).remove();
+        }
+
+
+
+        
+
+        }
+	    if(keyName === "Enter") {
+		
+                var carriage_return = document.createElement("BR");
+                v_count = v_count + 1;
+                carriage_return.id = v_count;
+
+	            this_document.appendChild(carriage_return);
+             }
+
+
+        if(keyName != "Shift" && keyName != "Enter" && keyName !="Backspace") {
+
+                 var character       = document.createElement("SPAN");
+                 var characterSymbol = document.createTextNode(keyName);
+		          v_count = v_count + 1;
+                 character.id = v_count;
+
+                 character.appendChild(characterSymbol);
+                 this_document.appendChild(character);
+              }
+
+
+
+
+	   
+	
+});
+
+</script>
+</hmtl>
