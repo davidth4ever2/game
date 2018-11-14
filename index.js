@@ -11,10 +11,25 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))*/
 
 
   
-app.get('/', function(req,res) 
+app.get('/recall.html', function(req,res) 
   {
-    res.sendFile('/home/david/Documents/game/game/game.html');
+    res.sendFile('/home/david/game/game/recall.html');
   })
+
+
+  app.get('/recall/readJSON.json', function(req,res) 
+  {
+    res.sendFile('/home/david/game/game/readJSON.json');
+  })
+
+
+  app.get('/recall/memory.json', function(req,res) 
+  {
+    res.sendFile('/home/david/game/game/memory.json');
+  })
+
+
+
 
 app.get('/save/:data', function (req, res) {
     

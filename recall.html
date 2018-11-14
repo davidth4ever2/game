@@ -1,0 +1,79 @@
+<html>
+    <head></head>
+
+    <style>
+            .grid-container {
+              display: grid;
+              grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+       
+              padding: 10px;
+            }
+            .grid-item {
+             
+              border: 1px solid rgba(0, 0, 0, 0.8);
+              padding: 1px;
+              font-size: 15px;
+              text-align: center;
+            }
+            </style>
+
+
+    <body>
+
+
+            <div class="grid-container" id="0">
+                    
+            </div> 
+
+    </body>
+    <script>
+
+
+      count = 0
+      
+      var rawFile = new XMLHttpRequest();
+      rawFile.overrideMimeType("application/json");
+      rawFile.open("GET", "/recall/memory.json", true);
+      rawFile.onreadystatechange = function() {
+          if (rawFile.readyState === 4 && rawFile.status == "200") {
+              
+            rawoutput = (JSON.parse(rawFile.responseText));
+            rawoutput = rawoutput.reverse()
+
+            rawoutput.forEach(element => {
+
+
+              console.log(element)
+              
+            
+
+
+                var memoryField       = document.createElement("DIV")
+                var memoryData        = document.createTextNode( (JSON.parse(element)).content[0])
+                myobject              = (JSON.parse(element))
+
+              
+                memoryField.style.backgroundColor = "rgb(" + myobject.content[0][0] + ","  + myobject.content[0][1] + "," + myobject.content[0][1] + ")"
+                memoryField.classList.add("grid-item")
+               
+                memoryField.appendChild(memoryData)
+
+                document.getElementById("0").appendChild(memoryField)
+
+                count = count + 1
+
+            
+
+                
+            })
+
+                               
+                
+              
+             
+          }
+      }
+      rawFile.send(null);
+      
+</script>
+</html>

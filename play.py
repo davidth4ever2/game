@@ -8,6 +8,27 @@ def language_symbols():
 
 print(language_symbols())
 
+class Encounter:
+    
+    def Encounter([]):
+
+        self.latitude      = []
+        longitude     = []
+        appearance    = []
+        encounterCost = 0
+
+
+
+
+    
+    
+
+    appearanceProcessor = [0,0,0]
+    positionProcessor   = [0,0,0]
+
+
+
+
 class Individual:
 
     latitude      = []
@@ -225,7 +246,18 @@ sleepTime         = 0
 
 # this is where the work begins
 
-for i in range(0,3):
+
+class Birth:
+    
+    certificate = str()
+    
+
+
+
+   
+                
+
+        for i in range(0,3):
 
     print(i)
 

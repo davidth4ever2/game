@@ -1,0 +1,19 @@
+{
+  "name": "recall",
+  "version": "1.0.0",
+  "description": "recall.html to ready readJSON.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidth4ever2/game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidth4ever2/game/issues"
+  },
+  "homepage": "https://github.com/davidth4ever2/game#readme"
+}
