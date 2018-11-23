@@ -1,14 +1,3 @@
-
-
-window.colors = ["white","silver",
-                "grey","red",
-                "maroon","yellow",
-                "olive","lime",
-                "green","aqua",
-                "teal","blue",
-                "navy","fuchsia",
-                "purple"
-            ]
 var intervalID = 0
 
 
