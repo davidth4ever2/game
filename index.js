@@ -1,5 +1,6 @@
 const express = require('express')
 var fs = require('fs'); 
+var path = require('path');
 const app = express()
 const port = 3000
 
@@ -11,53 +12,56 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))*/
 /**html*/
 app.get('/blue', function(req,res){
 
-  res.send('the color blue')
+  res.send('the color blue' + __dirname + '/test.html')
 
 })
 
 app.get('/test.html', function(req,res){
-
-  res.sendFile('/home/david/game/game/test.html');
+  
+  res.sendFile(path.join(__dirname + '/test.html'));
 
 })
 
 app.get('/index.html', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/index.html');
+    res.sendFile(path.join(__dirname + '/index.html'));
   })
 
 app.get('/recall.html', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/recall.html');
+    res.sendFile(path.join(__dirname + '/recall.html'));
   })
 
 app.get('/game.html', function (req, res) {
-    res.send('game.html')
+
+    res.sendFile(path.join(__dirname + '/game.html'));
+
   })
 
   /** javascript */
 
   app.get('/js/span.js', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/js/span.js');
+    res.sendFile(path.join(__dirname,'/span.js'));
+    
   })
   app.get('/js/populate.js', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/js/populate.js');
+    res.sendFile(path.join(__dirname,'/populate.js'));
   })
   app.get('/js/events.js', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/js/events.js');
+    res.sendFile(path.join(__dirname,'/events.js'));
   })
 
   app.get('/js/static.js', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/js/static.js');
+    res.sendFile(path.join(__dirname,'/static.js'));
   })
   
   app.get('/js/scratchpad.js', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/js/scratchpad.js');
+    res.sendFile(path.join(__dirname,'/scratchpad.js'));
   })
 
   
@@ -66,12 +70,12 @@ app.get('/game.html', function (req, res) {
 
   app.get('/recall/readJSON.json', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/readJSON.json');
+    res.sendFile(path.join(__dirname,'/readJSON.json'));
   })
 
   app.get('/recall/memory.json', function(req,res) 
   {
-    res.sendFile('/home/david/game/game/memory.json');
+    res.sendFile(path.join(__dirname,'/memory.json'));
   })
 
  /* TEST AREA */ 
