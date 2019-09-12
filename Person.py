@@ -77,7 +77,7 @@ def test():
                     m_sequenece  = m_sequenece + 1
                     currentValue = currentValue - 1 
                     david.light.acknowledgement[i][j] = currentValue
-     #               print(str(david.light.acknowledgement))
+                    print(str(david.light.acknowledgement))
             
                #waitTime = david.light.acknowledgement[(len(david.light.acknowledgement)-1)][j]
                 
